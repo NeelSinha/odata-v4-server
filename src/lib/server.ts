@@ -102,7 +102,7 @@ export class ODataServerBase extends Transform{
                         if (prop.toLowerCase() == "content-type"){
                             ensureODataContentType(req, res, headers[prop]);
                         }else{
-                            res.setHeader(prop, headers[prop]);
+                            headers[prop] && res.setHeader(prop, headers[prop]);
                         }
                     }
                 });
